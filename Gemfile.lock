@@ -30,7 +30,7 @@ GEM
       multipart-post (>= 1.2, < 3)
     fastimage (1.6.3)
       addressable (~> 2.3, >= 2.3.5)
-    ffi (1.9.3)
+    ffi (1.9.25)
     hike (1.2.3)
     hikidoc (0.1.0)
     hub (1.12.0)
