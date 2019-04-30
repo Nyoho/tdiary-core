@@ -28,7 +28,7 @@ group :development do
     gem 'launchy'
     gem 'sequel'
     gem 'sqlite3'
-    gem 'jasmine', '< 3'
+    gem 'jasmine', '< 4'
     gem 'simplecov', require: false
     gem 'coveralls', require: false
   end
