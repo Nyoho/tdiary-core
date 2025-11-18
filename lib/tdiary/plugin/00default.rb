@@ -383,11 +383,15 @@ def script_tag
 	require 'uri'
 	query = script_tag_query_string
 	html = @javascripts.keys.sort.map {|script|
-		async = @javascripts[script][:async] ? "async" : ""
+		attr = case @javascripts[script][:async]
+		       when true then " async"
+		       when false then ""
+		       else " defer"
+		       end
 		if URI(script).scheme or script =~ %r|\A//|
-			%Q|<script src="#{script}" #{async}></script>|
+			%Q|<script src="#{script}"#{attr}></script>|
 		else
-			%Q|<script src="#{js_url}/#{script}#{query}" #{async}></script>|
+			%Q|<script src="#{js_url}/#{script}#{query}"#{attr}></script>|
 		end
 	}.join( "\n\t" )
 	html << "\n" << <<-HEAD
