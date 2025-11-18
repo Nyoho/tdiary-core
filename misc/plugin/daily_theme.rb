@@ -19,8 +19,8 @@ def css_tag
 	end
 
 	<<-CSS
-	<link rel="stylesheet" href="#{h theme_url}/base.css" type="text/css" media="all">
-	<link rel="stylesheet" href="#{h css_url}" title="#{h theme_name}" type="text/css" media="all">
+	<link rel="preload" href="#{h theme_url}/base.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+	<link rel="preload" href="#{h css_url}" as="style" onload="this.onload=null;this.rel='stylesheet'">
 	CSS
 end
 

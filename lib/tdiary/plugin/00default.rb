@@ -418,8 +418,8 @@ def css_tag
 	end
 	title = File::basename( css, '.css' )
 	<<-CSS
-<link rel="stylesheet" href="#{h theme_url}/base.css" media="all">
-	<link rel="stylesheet" href="#{h css}" title="#{h title}" media="all">
+<link rel="preload" href="#{h theme_url}/base.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+	<link rel="preload" href="#{h css}" as="style" onload="this.onload=null;this.rel='stylesheet'">
 	CSS
 end
 
